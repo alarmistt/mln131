@@ -1,68 +1,233 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Vietnam-inspired color palette - Đậm và hào hùng hơn */
+    --vietnam-red: 0 85% 40%;
+    --vietnam-gold: 43 100% 50%;
+    --vietnam-crimson: 350 85% 35%;
+    --vietnam-bronze: 30 60% 45%;
+    --vietnam-dark: 220 20% 10%;
+    
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 0 85% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 100% 50%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 350 85% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 85% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom design tokens - Hào hùng và lịch sử */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--vietnam-crimson)) 0%, hsl(var(--vietnam-red)) 50%, hsl(var(--vietnam-gold)) 100%);
+    --gradient-hero-reverse: linear-gradient(135deg, hsl(var(--vietnam-gold)) 0%, hsl(var(--vietnam-red)) 50%, hsl(var(--vietnam-crimson)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--vietnam-red) / 0.08) 0%, hsl(var(--vietnam-gold) / 0.08) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--vietnam-dark) / 0.85) 100%);
+    --gradient-shine: linear-gradient(90deg, transparent 0%, hsl(var(--vietnam-gold) / 0.3) 50%, transparent 100%);
+    
+    --shadow-elegant: 0 15px 40px -15px hsl(var(--vietnam-red) / 0.4);
+    --shadow-glow: 0 0 50px hsl(var(--vietnam-gold) / 0.5);
+    --shadow-deep: 0 20px 60px -20px hsl(var(--vietnam-dark) / 0.3);
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 85% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 43 100% 55%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 350 85% 40%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 85% 45%;
+
+    --gradient-overlay: linear-gradient(180deg, hsl(220 20% 10% / 0.95) 0%, hsl(220 20% 10% / 0.98) 100%);
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+  
+  /* Text gradient cho tiêu đề hào hùng */
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-hero {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--secondary)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-gold {
+    background: linear-gradient(90deg, #f59e0b 0%, hsl(var(--secondary)) 50%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Shadow effects */
+  .shadow-hero {
+    box-shadow: 0 25px 50px -12px hsl(var(--vietnam-red) / 0.5);
+  }
+
+  .shadow-glow-gold {
+    box-shadow: 0 0 60px hsl(var(--vietnam-gold) / 0.6);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
