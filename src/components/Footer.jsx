@@ -71,8 +71,7 @@ const Footer = () => {
             </h3>
             <ul className="text-white/85 space-y-1">
               <li>Môn học: Chủ nghĩa xã hội khoa học</li>
-              <li>Năm học: 2024 – 2025</li>
-              <li>Trường: Đại học ... (bạn điền thêm)</li>
+              <li>Trường: Đại học FPT</li>
             </ul>
           </div>
         </div>

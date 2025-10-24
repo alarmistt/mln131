@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import React from "react";
+import GeminiChat from "./GeminiChat";
 
 const queryClient = new QueryClient();
 
@@ -18,9 +20,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+
+          {/* Chatbot hiển thị cố định */}
+          <GeminiChat />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
