@@ -26,7 +26,7 @@ const Footer = () => {
             </h3>
             <p className="text-white/85 leading-relaxed">
               Bài thuyết trình môn <strong>Chủ nghĩa xã hội khoa học</strong>,
-              chủ đề{" "}
+              chủ đề{' '}
               <em>“Dân chủ XHCN và Nhà nước pháp quyền XHCN ở Việt Nam”</em>.
             </p>
           </div>
@@ -79,7 +79,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="border-t border-white/20 pt-6 text-center text-white/80 text-sm">
           <p>
-            © 2024 – Dự án thuyết trình CNXHKH.{" "}
+            © 2025 – Dự án thuyết trình CNXHKH.{' '}
             <span className="hidden sm:inline">Tất cả quyền được bảo lưu.</span>
           </p>
         </div>
