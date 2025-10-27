@@ -31,8 +31,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">VN</span>
+            <div className="w-10 h-10 overflow-hidden rounded-lg">
+              <img 
+                src="https://sketchnote-datn-fall25.s3.ap-southeast-1.amazonaws.com/tl.webp"
+                alt="Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className={`font-bold text-xl ${scrolled ? "text-primary" : "text-white"}`}>
               CNXHKH
