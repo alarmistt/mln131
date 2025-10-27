@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 const ParallaxBackground = ({ children }) => {
   const bgRef = useRef(null);
@@ -10,8 +10,8 @@ const ParallaxBackground = ({ children }) => {
         bgRef.current.style.backgroundPositionY = `${offset}px`;
       }
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -21,8 +21,8 @@ const ParallaxBackground = ({ children }) => {
       style={{
         backgroundImage:
           "url('https://res.cloudinary.com/dk3yac2ie/image/upload/v1760944336/lzef6q4iw9nqwvmmh7nm.jpg')",
-        backgroundSize: "cover",
-        backgroundAttachment: "scroll",
+        backgroundSize: 'cover',
+        backgroundAttachment: 'scroll',
       }}
     >
       <div className="absolute inset-0 bg-white/80 backdrop-blur-sm -z-10"></div>
