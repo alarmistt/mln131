@@ -14,7 +14,7 @@ const Navigation = () => {
   }, []);
 
   const menuItems = [
-    { href: "#nha-nuoc-xhcn", label: "Nhà nước XHCN" },
+    { href: "#nha-nuoc-xhcn", label: "Dân chủ XHCNVN" },
     { href: "#nha-nuoc-phap-quyen", label: "Nhà nước pháp quyền" },
     { href: "#dan-chu", label: "Phát huy dân chủ" },
   ];

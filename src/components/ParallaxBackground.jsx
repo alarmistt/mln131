@@ -17,16 +17,20 @@ const ParallaxBackground = ({ children }) => {
   return (
     <div
       ref={bgRef}
-      className="relative overflow-hidden min-h-screen  bg-center bg-fixed -mt-24"
+      className="relative overflow-hidden min-h-screen bg-center bg-fixed -mt-24 z-0"
       style={{
         backgroundImage:
           "url('https://res.cloudinary.com/dk3yac2ie/image/upload/v1760944336/lzef6q4iw9nqwvmmh7nm.jpg')",
-        backgroundSize: 'cover',
-        backgroundAttachment: 'scroll',
+        backgroundSize: "100% auto",
+        backgroundPosition: "center top",
+        backgroundRepeat: "repeat",
+        backgroundAttachment: "scroll",
       }}
     >
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm -z-10"></div>
-      {children}
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 };
