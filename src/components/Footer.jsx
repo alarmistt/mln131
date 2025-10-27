@@ -42,7 +42,7 @@ const Footer = () => {
                   href="#nha-nuoc-xhcn"
                   className="text-white/85 hover:text-secondary transition-colors"
                 >
-                  Nhà nước XHCN
+                  Dân chủ XHCNVN
                 </a>
               </li>
               <li>
