@@ -6,6 +6,7 @@ import PhatHuy from '@/components/PhatHuy';
 import Footer from '@/components/Footer';
 import ParallaxBackground from '@/components/ParallaxBackground';
 import DanChuTypes from '@/components/DanChuTypes';
+import AISection from '@/components/AISection';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
         <PhatHuy />
         <DanChuTypes />
       </ParallaxBackground>
+      <AISection />
       <Footer />
       <div className="fixed bottom-4 left-4 select-none z-50">
         <div className="relative group">
